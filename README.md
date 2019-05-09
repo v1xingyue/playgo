@@ -1,6 +1,6 @@
 # playgo - a real playful Golang playground
 
-[![Build Status](https://travis-ci.org/huytd/playgo.svg?branch=master)](https://travis-ci.org/huytd/playgo)
+[![Build Status](https://travis-ci.org/v1xingyue/playgo.svg?branch=master)](https://travis-ci.org/huytd/playgo)
 
 ![](screenshot.png)
 
@@ -19,7 +19,7 @@ Because:
 ## How to install?
 
 ```
-go get -u github.com/huytd/playgo
+go get -u github.com/v1xingyue/playgo
 ```
 
 That's all! (Given that you have a `GOPATH` configured, and `$GOPATH/bin` in your `PATH`)

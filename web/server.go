@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"runtime"
 
-	"github.com/huytd/playgo/engine"
+	"github.com/v1xingyue/playgo/engine"
 )
 
 func runCode(w http.ResponseWriter, r *http.Request) {
@@ -43,9 +43,9 @@ func Start() {
 	_, filename, _, _ := runtime.Caller(1)
 	fs := http.FileServer(http.Dir(path.Join(filepath.Dir(filename), "www")))
 
-	http.Handle("/", fs)
-	http.HandleFunc("/api/run", runCode)
-	http.HandleFunc("/api/format", formatCode)
+	http.Handle("/playgo", fs)
+	http.HandleFunc("/playgo/api/run", runCode)
+	http.HandleFunc("/playgo/api/format", formatCode)
 
 	if err := http.ListenAndServe(":"+port, nil); err != nil {
 		log.Printf("Can't start HTTP listener: %v", err)
