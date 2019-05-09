@@ -38,7 +38,7 @@ const defaultPort = "3000"
 // Start launches an HTTP server and attaches handlers.
 func Start() {
 	port := envString("PLAYGO_PORT", defaultPort)
-	log.Printf("Starting web IDE at http://localhost:%s", port)
+	log.Printf("Starting web IDE at http://0.0.0.0:%s", port)
 
 	_, filename, _, _ := runtime.Caller(1)
 	fs := http.FileServer(http.Dir(path.Join(filepath.Dir(filename), "www")))

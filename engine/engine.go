@@ -113,6 +113,7 @@ func (e *Engine) Run(input string) (string, error) {
 		cmd.Dir = path
 		cmd.Stdout = w
 		cmd.Stderr = w
+		cmd.Env = append(os.Environ(), "GOCACHE=off")
 
 		return cmd.Run()
 	}, input)
